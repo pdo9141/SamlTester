@@ -24,7 +24,7 @@
     <ManifestCertificateThumbprint>E2188246011DEDF0C694C1F05F69B643413863E4</ManifestCertificateThumbprint>
     <ManifestKeyFile>davidsp8.windows.PostSamlAssertion_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -188,8 +188,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>"$(ProjectDir)..\ThirdPartyAssemlies\ilmerge" /out:$(ProjectDir)..\Runtime\davidsp8.common.Security.Saml.All.dll $(ProjectDir)..\davidsp8.common.Security.Saml\bin\Debug\davidsp8.common.Security.Saml.dll $(ProjectDir)..\davidsp8.common.Security.Saml11\bin\Debug\davidsp8.common.Security.Saml11.dll $(ProjectDir)..\davidsp8.common.Security.Saml20\bin\Debug\davidsp8.common.Security.Saml20.dll</PreBuildEvent>
     <PostBuildEvent>REM xcopy "$(ProjectDir)..\ThirdPartyAssemlies\log4net.dll" "$(ProjectDir)../../DemoApp"</PostBuildEvent>
   </PropertyGroup>
 </Project>
