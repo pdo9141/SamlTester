@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Backup
+/.vs
+/davidsp8.common.Security.Saml/bin
+/davidsp8.common.Security.Saml/obj/Debug
+/davidsp8.common.Security.Saml11/bin
+/davidsp8.common.Security.Saml11/obj/Debug
+/davidsp8.common.Security.Saml20/bin
+/davidsp8.common.Security.Saml20/obj/Debug
+/davidsp8.web.PostSamlAssertion/bin
+/davidsp8.web.PostSamlAssertion/obj/Debug
+/davidsp8.windows.PostSamlAssertion/bin/Debug/app.publish
+/davidsp8.windows.PostSamlAssertion/obj/Debug
