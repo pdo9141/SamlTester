@@ -10,3 +10,7 @@ Original command from Pre-build event command line in davidsp8.windows.PostSamlA
 
 01) Change "..\..\Runtime" to "..\Runtime"
 02) In davidsp8.windows.PostSamlAssertion Properties > Signing, uncheck sign the ClickOnce Manifest
+03) After first build, copy davidsp8.common.Security.Saml.All.dll in Runtime folder into bin of windows and web.PostSamlAssertion
+04) Create two application in IIS, WebServiceProvider and WebIdentityProvider
+05) You might have to grant IIS access to your repo folder path (C:\Users\Phillip\Source\Repos), use same as wwwroot
+06) Navigate to http://localhost/WebIdentityProvider/Default.aspx
