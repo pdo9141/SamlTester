@@ -16,7 +16,13 @@ namespace Web.ServiceProvider
         protected void Page_Load(object sender, EventArgs e)
         {
             var binFolderPath = Server.MapPath("bin");
-            Saml.Response samlResponse = new Response(File.ReadAllText(Path.Combine(binFolderPath, "modotech-test-cert-public.pem")));
+            var clientId = Request.Form["ClientId"];
+            var certName = "";
+
+            if ("1328".Equals(clientId))
+                certName = "modotech-test-cert-public.pem";
+
+            Saml.Response samlResponse = new Response(File.ReadAllText(Path.Combine(binFolderPath, certName)));
             //Saml.Response samlResponse = new Response(File.ReadAllBytes(Path.Combine(binFolderPath, "modotech-test-cert-public.pem")));
             samlResponse.LoadXmlFromBase64(Request.Form["SAMLResponse"]); //SAML providers usually POST the data into this var
             //samlResponse.LoadXmlFromBase64(GetSamlResponse());

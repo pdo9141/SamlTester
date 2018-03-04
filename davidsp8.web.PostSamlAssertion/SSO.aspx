@@ -16,6 +16,7 @@
     <div style="display:none" >
         <input id="SAMLResponse" type="text" runat="server" enableviewstate="False"/>
         <input id="RelayState" type="text" runat="server" enableviewstate="False"/>
+        <input id="ClientId" value="1328" type="text" runat="server" enableviewstate="False"/>
     </div>
     </form>
 </body>
