@@ -137,6 +137,9 @@
       <DependentUpon>ConfigurationData.xsd</DependentUpon>
     </None>
     <None Include="davidsp8.windows.PostSamlAssertion_TemporaryKey.pfx" />
+    <Content Include="modotech-test-cert.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
