@@ -18,11 +18,11 @@ namespace Web.ServiceProvider
             var binFolderPath = Server.MapPath("bin");
             Saml.Response samlResponse = new Response(File.ReadAllText(Path.Combine(binFolderPath, "modotech-test-cert-public.pem")));
             //Saml.Response samlResponse = new Response(File.ReadAllBytes(Path.Combine(binFolderPath, "modotech-test-cert-public.pem")));
-            //samlResponse.LoadXmlFromBase64(Request.Form["SAMLResponse"]); //SAML providers usually POST the data into this var
-            samlResponse.LoadXmlFromBase64(GetSamlResponse());
+            samlResponse.LoadXmlFromBase64(Request.Form["SAMLResponse"]); //SAML providers usually POST the data into this var
+            //samlResponse.LoadXmlFromBase64(GetSamlResponse());
 
-
-            if (samlResponse.IsValid())
+            var isValid = samlResponse.IsValid();
+            if (isValid)
             {
                 //WOOHOO!!! user is logged in
                 //YAY!
@@ -36,16 +36,19 @@ namespace Web.ServiceProvider
                     email = samlResponse.GetEmail();
                     firstname = samlResponse.GetFirstName();
                     lastname = samlResponse.GetLastName();
+
+                    // user has been authenticated, put your code here, like set a cookie or something...
+                    // or call FormsAuthentication.SetAuthCookie() or something
+                    // auto create user here?
                 }
                 catch (Exception ex)
                 {
                     //insert error handling code
                     //no, really, please do
                 }
-
-                //user has been authenticated, put your code here, like set a cookie or something...
-                //or call FormsAuthentication.SetAuthCookie() or something
             }
+
+            ltrSSOStatus.Text = isValid ? "successful" : "unsuccessful";
         }
 
         private string GetSamlResponse()

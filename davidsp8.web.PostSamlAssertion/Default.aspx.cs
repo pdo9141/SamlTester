@@ -12,8 +12,12 @@ namespace davidsp8.web.PostSamlAssertion {
         }
 
         protected void btnLogin_Click(object sender, EventArgs e) {
-            this.Session.Add("Email", txtEmail.Text);
+            this.Session.Add("email", txtEmail.Text);
+            this.Session.Add("firstname", txtFirstname.Text);
+            this.Session.Add("lastname", txtLastname.Text);
             txtEmail.Enabled = false;
+            txtFirstname.Enabled = false;
+            txtLastname.Enabled = false;
             lnkSSO.Visible = true;
             btnLogin.Visible = false;
         }

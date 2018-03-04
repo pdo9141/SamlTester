@@ -10,9 +10,16 @@
     <form id="form1" runat="server" defaultfocus="txtEmail" 
     defaultbutton="btnLogin">
     <div>
-    
-        <asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>&nbsp
-        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>&nbsp
+        <h1>LoanDepot Website</h1>
+        <asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>&nbsp;
+        <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox><br />
+        
+        <asp:Label ID="lblFirstname" runat="server" Text="Firstname:"></asp:Label>&nbsp;
+        <asp:TextBox ID="txtFirstname" runat="server"></asp:TextBox><br />
+        
+        <asp:Label ID="lblLastname" runat="server" Text="Lastname:"></asp:Label>&nbsp;
+        <asp:TextBox ID="txtLastname" runat="server"></asp:TextBox>&nbsp;
+
         <asp:Button ID="btnLogin" runat="server" Text="Login" 
             onclick="btnLogin_Click" />&nbsp
     
@@ -23,7 +30,7 @@
             SetFocusOnError="True"></asp:RegularExpressionValidator>
     
         &nbsp<asp:HyperLink ID="lnkSSO" runat="server" NavigateUrl="SSO.aspx" 
-            Target="_blank" Visible="False">SSO</asp:HyperLink>
+            Target="_blank" Visible="False">SSO into Xome</asp:HyperLink>
     
     </div>
     </form>
